@@ -56,4 +56,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return CardCollection.instance.currentCard.options[row];
     }
-}
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        var alert: UIAlertController
+        if CardCollection.instance.checkAnswer(answerPickerView.selectedRow(inComponent: 0)){
+        
+        //answer is Correct
+            alert = UIAlertController(title: "Correct", message: "Correct Answer!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yay!", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)}
+        else {
+            alert = UIAlertController(title: "Incorrect", message: "Incorrect answer!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Try again!", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)}
+        }
+    }
+    
+

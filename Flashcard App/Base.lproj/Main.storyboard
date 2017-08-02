@@ -48,7 +48,10 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xh1-Mb-zQC">
                                         <rect key="frame" x="0.0" y="617" width="343" height="30"/>
-                                        <state key="normal" title="Final answer"/>
+                                        <state key="normal" title="Final answer!"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fle-gT-iW7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
