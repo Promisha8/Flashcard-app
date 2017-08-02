@@ -35,7 +35,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func setUpCardUI() {
         questionTextView.text = CardCollection.instance.currentCard.question
         
-      questionLabel.text = "Question \(CardCollection.instance.currentIndex + 1)/\(CardCollection.instance.cards.count)"    }
+      questionLabel.text = "Question \(CardCollection.instance.currentIndex + 1)/\(CardCollection.instance.cards.count)"
+    
+      answerPickerView.reloadAllComponents()
+    }
     
     // Expand and add to view controller
     
@@ -69,7 +72,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             alert = UIAlertController(title: "Incorrect", message: "Incorrect answer!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Try again!", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true)}
-        }
+        
+    CardCollection.instance.nextQuestion()
+        
+        setUpCardUI()
+    }
     }
     
 
